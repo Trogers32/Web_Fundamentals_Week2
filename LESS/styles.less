@@ -1,0 +1,40 @@
+/*LESS is useful for nesting css elements and creating variables*/
+
+@red:rgb(243,104,112);
+@blue:rgb(130,180,238);
+@pic_height: 100px;
+@pic_width: 100px;
+
+.wrapper{
+    background-color: rgb(213,210,174);
+    width: 650px;
+    padding: 15px;
+}
+.header_img{
+    height: 51px;
+    width: 101px;
+    background-color: white;
+}
+.header{
+    margin-left: 90px;
+    margin-top: 16px;
+}
+.line{
+    display:inline-block;
+}
+.blue{
+    height: @pic_height;
+    width: @pic_width;
+    border: 3px solid black;
+    margin: .3px;
+    padding: 10px;
+    background-color: @blue;
+}
+.red{
+    height: @pic_height;
+    width: @pic_width;
+    border: 3px solid black;
+    margin: .3px;
+    padding: 10px;
+    background-color: @red;
+}

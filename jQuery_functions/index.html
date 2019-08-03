@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <title>jQuery Functions</title>
+</head>
+<body>
+    <div class="col-lg offset-3">
+        <div class="d-inline-block w-25 align-top">
+            <div class="p-2  text-center border border-primary" id="hidden">
+                <h1>Click the button to hide this text.</h1>
+                <button class="btn btn-primary" id="hide">Click here to hide!</button>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="show">Click here to show again!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="toggled">
+                <h1>Click the button to toggle this text.</h1>
+                <button class="btn btn-primary" id="toggle">Click here to toggle!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="slider">
+                <h1>Click the buttons to cover this text.</h1>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="slideUp">Click here to slide up!</button>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="slideDown">Click here to slide down!</button>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="slideToggle">Click here to toggle slide!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="fade">
+                <h1>Click the button to fade this text.</h1>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="fadeOut">Click here to fade out!</button>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="fadeIn">Click here to fade in!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="classes">
+                <h1>Click the button to add or remove a class to this text.</h1>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="addClass">Click here to add a class!</button>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="removeClass">Click here to remove the class!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="csss">
+                <h1>Click the button to add some css to this text.</h1>
+                <button class="btn btn-primary" id="css">Click here!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="insert">
+                <h1>Click the button to insert an element after this text.</h1>
+                <button class="btn btn-primary" id="after">Click here!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="add">
+                <h1>Click the button to add something to the beginning or end of this text.</h1>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="append">Click here to append!</button>
+                <button class="btn btn-primary d-block mt-1 mx-auto" id="prepend">Click here to prepend!</button>
+            </div>
+        </div>
+
+        <div class="d-inline-block w-25 align-top">
+            <div class="p-2  text-center border border-primary" id="attribute">
+                <h1>Click the button to see if the radio button is pressed.</h1>
+                <input type="radio" name="tester" class="a">
+                <button class="btn btn-primary" id="attr">Click here!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="inserting">
+                <h1>Click the button to insert something before this text.</h1>
+                <button class="btn btn-primary" id="before">Click here!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="getEle">
+                <h1>Click the button to get the html of this div.</h1>
+                <button class="btn btn-primary" id="html">Click here!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="getText">
+                <h1>Click the button to get all of the text in this div.</h1>
+                <button class="btn btn-primary" id="text">Click here!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="getTextArea">
+                <h1>Click the button to get the content entered in the following text area.</h1>
+                <textarea id="textArea" class="w-75 p-2 h-25 border border-primary d-block mx-auto text-center" placeholder="I am a placeholder."></textarea>
+                <button class="btn btn-primary mt-1" id="val">Click here!</button>
+            </div>
+            <div class="p-2  text-center border border-primary" id="click">
+                <h1 id="clicked">Click this text to change the text underneath.</h1>
+                <p>HELLO WORLD!</p>
+            </div>
+            <div class="p-2  text-center border border-primary" id="hover">
+                <h1 id="hovered">Hover over this text to change the text below.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+    <!--
+        Effects (functions to do some cool animation effects)
+        .hide()
+        .show()
+        .toggle()
+        .slideUp() - not available in the slim version
+        .slideDown() - not available in the slim version
+        .slideToggle() - not available in the slim version
+        .fadeOut() - not available in the slim version
+        .fadeIn() - not available in the slim version
+
+        CSS (adding or removing a class for any HTML element/DOM)
+        .addClass()
+        .removeClass()
+        .css()
+
+        Manipulation (retrieving or setting value or text in any HTML element)
+        .after()
+        .append()
+        .prepend()
+        .attr()
+        .before()
+        .html()
+        .text()
+        .val()
+
+        Events (functions to handle an event)
+        .click()
+        .hover()
+    -->
+</body>
+</html>

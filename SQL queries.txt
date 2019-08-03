@@ -1,0 +1,122 @@
+SELECT *
+FROM users
+WHERE first_name LIKE "%e"
+ORDER BY birthday DESC;
+
+INSERT INTO table_name (column_name1, column_name2) 
+VALUES('column1_value', 'column2_value');
+
+UPDATE table_name SET column_name1 = 'some_value', column_name2='another_value' WHERE condition(s)
+
+DELETE * FROM table_name WHERE condition(s)
+
+SET SQL_SAFE_UPDATES = 0;
+
+1-1 join
+SELECT * FROM customers 
+JOIN addresses ON addresses.id = customers.address_id;
+
+1-many
+SELECT * FROM orders 
+JOIN customers ON customers.id = orders.customer_id;
+
+many-many
+SELECT * FROM orders 
+JOIN items_orders ON orders.id = items_orders.order_id 
+JOIN items ON items.id = items_orders.item_id;
+
+GROUP BY AVG(column), COUNT(column), GROUP_CONCAT(column), MAX(column), MIN(column), SUM(column)
+
+ex
+get all tweets from the user id of 1
+SELECT tweets.tweet as kobe_tweets
+FROM users
+LEFT JOIN tweets
+ON users.id = tweets.user_id
+WHERE users.id = 1;
+
+return all the tweets that the user with id 2 has tagged as favorites
+SELECT first_name, tweet
+FROM users
+LEFT JOIN faves
+ON users.id = faves.user_id
+LEFT JOIN tweets
+ON faves.tweet_id = tweets.id
+WHERE users.id = 2;
+
+get all the tweets that user with id 2, or user with id 1, has tagged as favorites
+SELECT first_name, tweet
+FROM users
+LEFT JOIN faves
+ON users.id = faves.user_id
+LEFT JOIN tweets
+ON faves.tweet_id = tweets.id
+WHERE users.id = 1 OR users.id = 2;
+
+get all the users that are following the user with id 1
+The key word to remember is the word "AS" because it lets us 
+join the same table twice by providing SQL with another variable to reference the table that is getting joined again.
+SELECT users.first_name as followed, users2.first_name as follower
+FROM users
+LEFT JOIN follows
+ON users.id = follows.followed_id
+LEFT JOIN users as users2
+ON users2.id = follows.follower_id
+WHERE users.id = 1;
+
+SELECT users.first_name as user, COUNT(users2.first_name) as follower_count
+FROM users
+LEFT JOIN follows
+ON users.id = follows.followed_id
+LEFT JOIN users as users2
+ON users2.id = follows.follower_id
+WHERE users.id = 1
+GROUP BY users.id
+
+
+get all users that are not following the user with id of 2
+SELECT *
+FROM users
+WHERE users.id NOT IN (
+SELECT follower_id
+FROM follows
+WHERE followed_id = 2
+) AND users.id != 2;
+
+When SQL uses the keyword JOIN, it only includes those records that have matches on both sides. 
+It will omit any records that don't have a 'partner'. 
+LEFT JOIN will include all the records from the first table, 
+regardless of whether that record has a matching foreign key in the table that we are trying to join to it. 
+
+
+
+
+functions:
+-text
+concat()
+SELECT CONCAT('MR.'. FIRST_NAME. ' '. LAST_NAME) AS FULL_NAME EMAIL--(SECONDARY SELECTION) FROM CLIENTS;
+
+concat_ws()
+SELECT CONCAT_WS(FIRST_NAME. ' '. LAST_NAME) AS FULL_NAME EMAIL--(SECONDARY SELECTION) FROM CLIENTS; --separates selected concat items with a space
+
+LENGTH()
+SELECT LENGTH(LAST_NAME) AS LAST_LENGTH FROM CLIENTS;
+
+LOWER()
+SELECT LOWER(LAST_NAME) AS LAST_LOWERCASE FROM CLIENTS;
+
+-date
+HOUR()
+SELECT HOUR(JOINED_DATETIME) AS DATE_HOUR FROM CLIENTS;
+
+DAYNAME()
+SELECT DAYNAME(JOINED_DATETIME) AS DAY_NAME. JOINED_DATETIME FROM CLIENTS;
+
+MONTH()
+SELECT MONTH(JOINED_DATETIME) AS MONTH_NUMBER. JOINED_DATETIME FROM CLIENTS;
+
+NOW()
+SELECT NOW(); --current time
+
+DATE_FORMAT() - display date in specific formats (check w3 for all kinds)
+
